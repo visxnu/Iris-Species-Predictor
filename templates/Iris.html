@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>    
+</head>
+<body>
+
+    <h2>Enter the length and width</h2>
+    <form action="{{url_for('predict')}}" method="post">
+        <div class="input-group">
+            <label for="number1">Sepal Lenth:</label>
+            <input type="number" id="number1" name="number1" required>
+        </div>
+        <div class="input-group">
+            <label for="number2">Sepal Width:</label>
+            <input type="number" id="number2" name="number2" required>
+        </div>
+        <div class="input-group">
+            <label for="number3">Petal length:</label>
+            <input type="number" id="number3" name="number3" required>
+        </div>
+        <div class="input-group">
+            <label for="number4">Petal Width:</label>
+            <input type="number" id="number4" name="number4" required>
+        </div>
+        <button type="submit">predict</button>
+    </form>
+
+    <p>{{prediction_text}}</p>
+
+</body>
+</html>
